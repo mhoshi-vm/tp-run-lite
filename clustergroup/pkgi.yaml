@@ -1,0 +1,173 @@
+apiVersion: packaging.carvel.dev/v1alpha1
+kind: PackageInstall
+metadata:
+  annotations:
+    kapp.k14s.io/change-group: cert-manager
+    kapp.k14s.io/change-rule.gateway-api: upsert after upserting gateway-api
+  name: cert-manager.tanzu.vmware.com
+  namespace: default
+spec:
+  packageRef:
+    refName: cert-manager.tanzu.vmware.com
+    versionSelection:
+      constraints: '>0.0.0'
+  serviceAccountName: pkg-installs-sa
+---
+apiVersion: packaging.carvel.dev/v1alpha1
+kind: PackageInstall
+metadata:
+  name: container-apps.tanzu.vmware.com
+  namespace: default
+spec:
+  packageRef:
+    refName: container-apps.tanzu.vmware.com
+    versionSelection:
+      constraints: '>0.0.0'
+  serviceAccountName: pkg-installs-sa
+---
+apiVersion: packaging.carvel.dev/v1alpha1
+kind: PackageInstall
+metadata:
+  name: controller.build.tanzu.vmware.com
+  namespace: default
+spec:
+  packageRef:
+    refName: controller.build.tanzu.vmware.com
+    versionSelection:
+      constraints: '>0.0.0'
+  serviceAccountName: pkg-installs-sa
+---
+apiVersion: packaging.carvel.dev/v1alpha1
+kind: PackageInstall
+metadata:
+  name: health.spaces.tanzu.vmware.com
+  namespace: default
+spec:
+  packageRef:
+    refName: health.spaces.tanzu.vmware.com
+    versionSelection:
+      constraints: '>0.0.0'
+  serviceAccountName: pkg-installs-sa
+---
+apiVersion: packaging.carvel.dev/v1alpha1
+kind: PackageInstall
+metadata:
+  name: horizontal-autoscaling.tanzu.vmware.com
+  namespace: default
+spec:
+  defaultNamespace: unusable-namespace
+  packageRef:
+    refName: horizontal-autoscaling.tanzu.vmware.com
+    versionSelection:
+      constraints: '>0.0.0'
+  serviceAccountName: pkg-installs-sa
+---
+apiVersion: packaging.carvel.dev/v1alpha1
+kind: PackageInstall
+metadata:
+  annotations:
+    kapp.k14s.io/change-rule.tcs: upsert after upserting tcs
+  name: ingress.tanzu.vmware.com
+  namespace: default
+spec:
+  packageRef:
+    refName: ingress.tanzu.vmware.com
+    versionSelection:
+      constraints: '>0.0.0'
+  serviceAccountName: pkg-installs-sa
+---
+apiVersion: packaging.carvel.dev/v1alpha1
+kind: PackageInstall
+metadata:
+  annotations:
+    kapp.k14s.io/change-group: gateway-api
+  name: k8sgateway.tanzu.vmware.com
+  namespace: default
+spec:
+  packageRef:
+    refName: k8sgateway.tanzu.vmware.com
+    versionSelection:
+      constraints: '>0.0.0'
+  serviceAccountName: pkg-installs-sa
+---
+apiVersion: packaging.carvel.dev/v1alpha1
+kind: PackageInstall
+metadata:
+  name: observability.tanzu.vmware.com
+  namespace: default
+spec:
+  packageRef:
+    refName: observability.tanzu.vmware.com
+    versionSelection:
+      constraints: '>0.0.0'
+  serviceAccountName: pkg-installs-sa
+---
+apiVersion: packaging.carvel.dev/v1alpha1
+kind: PackageInstall
+metadata:
+  annotations:
+    kapp.k14s.io/change-rule.cert-manager: upsert after upserting cert-manager
+  name: servicebinding.tanzu.vmware.com
+  namespace: default
+spec:
+  packageRef:
+    refName: servicebinding.tanzu.vmware.com
+    versionSelection:
+      constraints: '>0.0.0'
+  serviceAccountName: pkg-installs-sa
+---
+apiVersion: packaging.carvel.dev/v1alpha1
+kind: PackageInstall
+metadata:
+  name: tanzu-servicebinding.tanzu.vmware.com
+  namespace: default
+spec:
+  packageRef:
+    refName: tanzu-servicebinding.tanzu.vmware.com
+    versionSelection:
+      constraints: '>0.0.0'
+  serviceAccountName: pkg-installs-sa
+---
+apiVersion: packaging.carvel.dev/v1alpha1
+kind: PackageInstall
+metadata:
+  annotations:
+    ext.packaging.carvel.dev/ytt-paths-from-secret-name.0: istiod-lite-hack
+    kapp.k14s.io/change-group: tcs
+    kapp.k14s.io/change-rule.cert-manager: upsert after upserting cert-manager
+  name: tcs.tanzu.vmware.com
+  namespace: default
+spec:
+  packageRef:
+    refName: tcs.tanzu.vmware.com
+    versionSelection:
+      constraints: '>0.0.0'
+  serviceAccountName: pkg-installs-sa
+---
+apiVersion: packaging.carvel.dev/v1alpha1
+kind: PackageInstall
+metadata:
+  annotations:
+    kapp.k14s.io/change-rule.tcs: upsert after upserting tcs
+  name: mtls.tanzu.vmware.com
+  namespace: default
+spec:
+  packageRef:
+    refName: mtls.tanzu.vmware.com
+    versionSelection:
+      constraints: '>0.0.0'
+  serviceAccountName: pkg-installs-sa
+---
+apiVersion: packaging.carvel.dev/v1alpha1
+kind: PackageInstall
+metadata:
+  annotations:
+    kapp.k14s.io/change-rule.tcs: upsert after upserting tcs
+  name: egress.tanzu.vmware.com
+  namespace: default
+spec:
+  packageRef:
+    refName: egress.tanzu.vmware.com
+    versionSelection:
+      constraints: '>0.0.0'
+  serviceAccountName: pkg-installs-sa
